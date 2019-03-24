@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LiveWash</string>
+    <string name="laverie_bouton">Ma laverie</string>
+    <string name="contact_bouton">Contact</string>
+</resources>

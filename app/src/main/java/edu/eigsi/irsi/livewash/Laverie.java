@@ -118,11 +118,6 @@ public class Laverie extends AppCompatActivity {
         });
 
 
-
-
-
     }
-
-
 
 }

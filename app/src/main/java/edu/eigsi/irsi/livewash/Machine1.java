@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class Machine1 extends AppCompatActivity {
 
     private Button buttonLaverie1;
+    private Machine machine1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,4 +28,7 @@ public class Machine1 extends AppCompatActivity {
             }
         });
     }
+
+
+
 }

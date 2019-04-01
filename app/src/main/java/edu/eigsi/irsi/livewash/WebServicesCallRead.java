@@ -38,11 +38,11 @@ import java.util.Map;
 
 public class WebServicesCallRead implements  Response.Listener<String>,
         Response.ErrorListener /* facultatif */ {
-  private final MainActivity activity;
+  private final Laverie activity;
   private String url;
   private RequestQueue queue;
 
-  public WebServicesCallRead(MainActivity activity, String url) {
+  public WebServicesCallRead(Laverie activity, String url) {
     super();
     this.activity = activity;
     // Instancie la file de message (cet objet doit être un singleton)

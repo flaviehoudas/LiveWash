@@ -18,6 +18,4 @@ public class Machine {
         String stateF = state;
         return stateF;
     }
-
-
 }

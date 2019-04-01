@@ -1,11 +1,13 @@
 package edu.eigsi.irsi.livewash;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Laverie extends AppCompatActivity {
 
@@ -18,6 +20,7 @@ public class Laverie extends AppCompatActivity {
     private ImageView buttonMach6;
     private ImageView buttonMach7;
     private ImageView buttonMach8;
+    private ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class Laverie extends AppCompatActivity {
         this.buttonMach6 = (ImageView) findViewById(R.id.buttonMach6);
         this.buttonMach7 = (ImageView) findViewById(R.id.buttonMach7);
         this.buttonMach8 = (ImageView) findViewById(R.id.buttonMach8);
+
 
 
 
@@ -119,5 +123,53 @@ public class Laverie extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Lignes facultatives
+        //------------------------------------------------
+        this.progress = new ProgressDialog(this);
+        this.progress.setTitle("Veuillez patientez");
+        this.progress.setMessage("Récupération du résultat en cours...");
+        this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        this.progress.show();
+        //------------------------------------------------
+
+        String url;
+        // url du service write
+        url = "http://qcmjava.eigsi.fr/data/write.php";
+        // Instanciation du Web Service
+        WebServicesCallWrite wscw = new WebServicesCallWrite(this, url);
+        // Appel de la fonction write avec la donnée ""
+        wscw.write("local","L");
+
+        // Appel du service read
+        this.progress.show();
+        url = "http://qcmjava.eigsi.fr/data/read.php";
+        WebServicesCallRead  wscr = new WebServicesCallRead(this, url);
+        wscr.read("local");
+
+    }
+
+    // Fonction appelée par l'objet wscw
+    public void populateWrite(String reponse) {
+        if(this.progress.isShowing())
+            this.progress.dismiss();
+    }
+
+    // Fonction appelée par l'objet wscr
+    public void populateRead(String reponse) {
+        if(this.progress.isShowing())
+        this.progress.dismiss();
+        if (reponse == "L") {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+    }
+
+
+
 
 }

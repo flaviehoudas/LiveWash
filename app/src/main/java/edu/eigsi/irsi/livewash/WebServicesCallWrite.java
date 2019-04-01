@@ -40,11 +40,11 @@ import java.util.Map;
 
 public class WebServicesCallWrite implements  Response.Listener<String>,
         Response.ErrorListener /* facultatif */ {
-  private final MainActivity activity;
+  private final Laverie activity;
   private String url;
   private RequestQueue queue;
 
-  public WebServicesCallWrite(MainActivity activity, String url) {
+  public WebServicesCallWrite(Laverie activity, String url) {
     super();
     this.activity = activity;
     // Instancie la file de message (cet objet doit être un singleton)

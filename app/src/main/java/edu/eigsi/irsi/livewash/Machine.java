@@ -7,6 +7,7 @@ public class Machine {
     private String state;
     private int numeroMachine;
     private String propriete; /** marque, temps de la machine, programme... dans un @string **/
+    
 
 
     public Machine(int numeroMachine, String propriete){

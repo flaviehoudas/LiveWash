@@ -9,7 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +22,12 @@
                 android:id="@+id/buttonLaverie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/laverie_bouton" />
+                android:background="@drawable/fondbtnlaverie"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFF"
+                android:layout_weight="1"
+                android:text="Ma laverie" />
         </LinearLayout>
 
         <LinearLayout
@@ -33,8 +40,12 @@
                 android:id="@+id/buttonContact"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/fondbtncontactfonce"
                 android:layout_weight="1"
                 android:text="@string/contact_bouton"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFF"
                 tools:ignore="NestedWeights" />
         </LinearLayout>
 

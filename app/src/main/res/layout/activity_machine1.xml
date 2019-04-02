@@ -33,15 +33,17 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="Machine n°1"
-                    android:textSize="30sp" />
+                    android:textColor="#00BFFF"
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Durée du cycle : 1h30" />
+                    android:text="Durée du cycle : 1h30"
+                    android:textColor="#0000FF"
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -56,7 +58,10 @@
                     android:id="@+id/buttonLancer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Lancer un cycle" />
+                    android:text="Lancer un cycle"
+                    android:textSize="20sp"
+                    android:fontFamily="Times New Roman"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <LinearLayout
@@ -70,7 +75,10 @@
                     android:id="@+id/buttonSignaler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Signaler un problème" />
+                    android:text="Signaler un problème"
+                    android:textStyle="bold"
+                    android:fontFamily="Times New Roman"
+                    android:textSize="20sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -83,16 +91,23 @@
                     android:id="@+id/heureDebut"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Heure de début" />
+                    android:gravity="center|start"
+                    android:text=" "
+                    android:textColor="#00BFFF"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/heureFin"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_weight="1"
-                    android:text="Heure de fin" />
+                    android:gravity="left|center_vertical"
+                    android:text=" "
+                    android:textColor="#00BFFF"
+                    android:textSize="20sp" />
 
             </LinearLayout>
         </LinearLayout>

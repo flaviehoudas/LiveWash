@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -16,6 +17,9 @@ public class Machine1 extends AppCompatActivity {
     private Machine machine1;
     private Button buttonLancer;
     private Button buttonSignaler;
+    private TextView heureDebut , heureFin;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +35,20 @@ public class Machine1 extends AppCompatActivity {
                 finish();
             }
         });
+        this.heureDebut=  (TextView) findViewById(R.id.heureDebut);
+        this.heureFin = (TextView)  findViewById(R.id.heureFin);
 
         buttonLancer.setOnClickListener(new View.OnClickListener() {
+
+            Date now = new Date();
+            int heure = now.getHours();
+            int heureFinal = heure + 90 ;
+
             @Override
             public void onClick(View view) {
-               Date now = new Date();
-               int heureDebut = now.getHours();
+               heureDebut.setText("Heure de début du cycle : " + heure);
+               heureFin.setText("Heure de fin du cycle : " + heureFinal);
+
 
              /** écrire sur le dossier serveur **/
 

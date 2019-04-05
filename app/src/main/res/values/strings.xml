@@ -2,10 +2,4 @@
     <string name="app_name">LiveWash</string>
     <string name="laverie_bouton">Ma laverie</string>
     <string name="contact_bouton">Contact</string>
-    <string name="nomLaverie">Laverie La Rochelle</string>
-    <string name="adresse">8 rue des Acacias <br>
-        17000 La Rochelle</br></string>
-    <string name="mail">larochelle@livewash.fr</string>
-    <string name="telephone">05.46.45.34.23</string>
-    <string name="horaire">Ouvert 7j/7 de 7h à 21h</string>
 </resources>

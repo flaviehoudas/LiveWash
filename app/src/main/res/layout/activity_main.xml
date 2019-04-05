@@ -23,12 +23,15 @@
                 android:id="@+id/buttonLaverie"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/fondbtnlaverie"
-                android:textSize="40dp"
-                android:textStyle="bold"
-                android:textColor="#FFFF"
                 android:layout_weight="1"
-                android:text="Ma laverie" />
+                android:background="@drawable/fondbtnlaverie"
+                android:lineSpacingExtra="10sp"
+                android:text="Ma laverie"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="#FFFF"
+                android:textSize="30sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -41,12 +44,13 @@
                 android:id="@+id/buttonContact"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/fondbtncontactfonce"
                 android:layout_weight="1"
+                android:background="@drawable/fondbtncontactfonce"
+                android:lineSpacingExtra="10sp"
                 android:text="@string/contact_bouton"
-                android:textSize="40sp"
-                android:textStyle="bold"
                 android:textColor="#FFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
                 tools:ignore="NestedWeights" />
         </LinearLayout>
 

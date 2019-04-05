@@ -5,19 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.Calendar;
 import java.util.Date;
+import java.text.SimpleDateFormat;
+
 
 public class Machine1 extends AppCompatActivity {
 
     private Button buttonLaverie1;
-    private Machine machine1;
     private Button buttonLancer;
-    private Button buttonSignaler;
+    SimpleDateFormat date = new java.text.SimpleDateFormat("HH:mm");
+    String time = date.format(new Date());
+    //SimpleDateFormat dateFinal = date + 90 ;
+    //String timeFinal = dateFinal.format(new Date());
     private TextView heureDebut , heureFin;
+    private Button buttonSignaler;
 
 
     @Override
@@ -26,6 +28,10 @@ public class Machine1 extends AppCompatActivity {
         setContentView(R.layout.activity_machine1);
 
         this.buttonLaverie1 = (Button) findViewById(R.id.buttonLaverie1);
+        this.buttonLancer = (Button) findViewById(R.id.buttonLancer);
+        this.heureDebut=  (TextView) findViewById(R.id.heureDebut);
+        this.heureFin = (TextView)  findViewById(R.id.heureFin);
+
 
         buttonLaverie1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,19 +41,16 @@ public class Machine1 extends AppCompatActivity {
                 finish();
             }
         });
-        this.heureDebut=  (TextView) findViewById(R.id.heureDebut);
-        this.heureFin = (TextView)  findViewById(R.id.heureFin);
+
 
         buttonLancer.setOnClickListener(new View.OnClickListener() {
 
-            Date now = new Date();
-            int heure = now.getHours();
-            int heureFinal = heure + 90 ;
-
             @Override
             public void onClick(View view) {
-               heureDebut.setText("Heure de début du cycle : " + heure);
-               heureFin.setText("Heure de fin du cycle : " + heureFinal);
+
+
+               heureDebut.setText("Heure de début du cycle : " + time);
+               //heureFin.setText("Heure de fin du cycle : " + timeFinal);
 
 
              /** écrire sur le dossier serveur **/
@@ -56,12 +59,12 @@ public class Machine1 extends AppCompatActivity {
             }
         });
 
-        buttonSignaler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        //buttonSignaler.setOnClickListener(new View.OnClickListener() {
+           // @Override
+           // public void onClick(View view) {
                 /** écrire sur le dossier du serveur**/
-            }
-        });
+            //}
+        //});
     }
 
 

@@ -28,12 +28,12 @@ public class Contact extends AppCompatActivity {
             }
         });
 
-        public void onBackPressed()
+        //public void onBackPressed()
 
-        {
+        //{
             // code here to show dialog
-            super.onBackPressed();  // optional depending on your needs
-        }
+            //super.onBackPressed();  // optional depending on your needs
+        //}
 
     }
 }

@@ -6,18 +6,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+
+
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
+
 
 
 public class Machine1 extends AppCompatActivity {
 
     private Button buttonLaverie1;
     private Button buttonLancer;
-    SimpleDateFormat date = new java.text.SimpleDateFormat("HH:mm");
-    String time = date.format(new Date());
-    //SimpleDateFormat dateFinal = date + 90 ;
-    //String timeFinal = dateFinal.format(new Date());
+
+
+    Date dateIni = new Date();
+    Date dateToAdd = new Date(10*1000);
+    Date dateFinal = new Date(dateIni.getTime() + dateToAdd.getTime());
+    Date dateNow = new Date();
+
+    SimpleDateFormat sdfIni = new SimpleDateFormat("HH:mm");
+    SimpleDateFormat sdfFinal = new SimpleDateFormat("HH:mm");
+
+    String timeIni = sdfIni.format(dateIni);
+    String timeFinal = sdfFinal.format(dateFinal);
+
+
+
+
     private TextView heureDebut , heureFin;
     private Button buttonSignaler;
 
@@ -43,21 +60,36 @@ public class Machine1 extends AppCompatActivity {
         });
 
 
+
+
+
+
+
+
         buttonLancer.setOnClickListener(new View.OnClickListener() {
+
+
+            public void tempsMachine() {
+                Boolean compare = dateNow.before(dateFinal);
+                while (compare){
+                    buttonLancer.setText("Machine lancée");
+                    buttonLancer.setClickable(false);
+                    buttonLancer.setBackgroundColor(0xFFFF0000);
+                    dateNow = new Date();
+                    compare = dateNow.before(dateFinal);
+                }
+            }
 
             @Override
             public void onClick(View view) {
 
 
-               heureDebut.setText("Heure de début du cycle : " + time);
-               //heureFin.setText("Heure de fin du cycle : " + timeFinal);
-
-
-             /** écrire sur le dossier serveur **/
-
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                tempsMachine();
 
             }
-        });
+
 
         //buttonSignaler.setOnClickListener(new View.OnClickListener() {
            // @Override
@@ -65,8 +97,8 @@ public class Machine1 extends AppCompatActivity {
                 /** écrire sur le dossier du serveur**/
             //}
         //});
+    });
+
+
     }
-
-
-
 }

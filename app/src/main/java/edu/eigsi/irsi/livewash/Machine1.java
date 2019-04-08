@@ -1,5 +1,6 @@
 package edu.eigsi.irsi.livewash;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -70,13 +71,13 @@ public class Machine1 extends AppCompatActivity {
 
 
             public void tempsMachine() {
-                Boolean compare = dateNow.before(dateFinal);
-                while (compare){
+                int compare = dateNow.compareTo(dateFinal);
+                while (compare < 0){
                     buttonLancer.setText("Machine lancée");
                     buttonLancer.setClickable(false);
                     buttonLancer.setBackgroundColor(0xFFFF0000);
                     dateNow = new Date();
-                    compare = dateNow.before(dateFinal);
+                    compare = dateNow.compareTo(dateFinal);
                 }
             }
 
@@ -90,15 +91,8 @@ public class Machine1 extends AppCompatActivity {
 
             }
 
-
-        //buttonSignaler.setOnClickListener(new View.OnClickListener() {
-           // @Override
-           // public void onClick(View view) {
-                /** écrire sur le dossier du serveur**/
-            //}
-        //});
     });
-
-
     }
+
+
 }

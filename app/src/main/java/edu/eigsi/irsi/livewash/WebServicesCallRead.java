@@ -38,9 +38,15 @@ import java.util.Map;
 
 public class WebServicesCallRead implements  Response.Listener<String>,
         Response.ErrorListener /* facultatif */ {
+
   private final Laverie activity;
   private String url;
   private RequestQueue queue;
+
+
+
+
+
 
   public WebServicesCallRead(Laverie activity, String url) {
     super();
@@ -49,6 +55,7 @@ public class WebServicesCallRead implements  Response.Listener<String>,
     queue = Volley.newRequestQueue(activity);
     this.url = url;
   }
+
 
   public void read(final String filename) {
     StringRequest myReqWrite = new StringRequest(

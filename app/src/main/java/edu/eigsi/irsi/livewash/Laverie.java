@@ -145,6 +145,8 @@ public class Laverie extends AppCompatActivity {
         this.progress.show();
         //------------------------------------------------
 
+
+
         String url;
         // url du service write
         url = "http://qcmjava.eigsi.fr/data/write.php";

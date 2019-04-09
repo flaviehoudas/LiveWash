@@ -47,6 +47,7 @@ public class Machine1 extends AppCompatActivity {
 
         this.buttonLaverie1 = (Button) findViewById(R.id.buttonLaverie1);
         this.buttonLancer = (Button) findViewById(R.id.buttonLancer);
+        this.buttonSignaler = (Button) findViewById(R.id.buttonSignaler) ;
         this.heureDebut=  (TextView) findViewById(R.id.heureDebut);
         this.heureFin = (TextView)  findViewById(R.id.heureFin);
 
@@ -92,6 +93,15 @@ public class Machine1 extends AppCompatActivity {
             }
 
     });
+
+        buttonSignaler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signaler = new Intent(getApplicationContext() , Signaler.class);
+                startActivity(signaler);
+                finish();
+            }
+        });
     }
 
 

@@ -45,6 +45,13 @@ public class Machine1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_machine1);
 
+        @Override
+        public void onSaveInstanceState(Bundle savedInstanceState) {
+            //savedInstanceState.putString(COMMENTAIRE, mComment);
+
+            super.onSaveInstanceState(savedInstanceState);
+        }
+
         this.buttonLaverie1 = (Button) findViewById(R.id.buttonLaverie1);
         this.buttonLancer = (Button) findViewById(R.id.buttonLancer);
         this.buttonSignaler = (Button) findViewById(R.id.buttonSignaler) ;
@@ -74,11 +81,11 @@ public class Machine1 extends AppCompatActivity {
             public void tempsMachine() {
                 int compare = dateNow.compareTo(dateFinal);
                 while (compare < 0){
-                    buttonLancer.setText("Machine lancée");
-                    buttonLancer.setClickable(false);
+                    buttonLancer.setText("Machine vidée");
+                    //buttonLancer.setClickable(false);
                     buttonLancer.setBackgroundColor(0xFFFF0000);
-                    dateNow = new Date();
-                    compare = dateNow.compareTo(dateFinal);
+                    //dateNow = new Date();
+                    //compare = dateNow.compareTo(dateFinal);
                 }
             }
 

@@ -9,6 +9,7 @@ import android.widget.Button;
 public class Signaler extends AppCompatActivity {
 
     private Button buttonRmach1;
+    private Button buttonEnvoyer;
 
 
     @Override
@@ -27,6 +28,15 @@ public class Signaler extends AppCompatActivity {
                     }
                 });
 
+        this.buttonEnvoyer = (Button) findViewById(R.id.buttonEnvoyer);
+
+        buttonEnvoyer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Signaler.this, Pop.class));
             }
+        });
+    }
+
     }
 

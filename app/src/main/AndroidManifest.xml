@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Signaler"></activity>
+        <activity android:name=".Pop"
+                android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
         <activity android:name=".Machine8" />
         <activity android:name=".Machine7" />
         <activity android:name=".Machine6" />

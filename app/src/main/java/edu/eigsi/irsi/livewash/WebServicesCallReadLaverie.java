@@ -1,6 +1,5 @@
 package edu.eigsi.irsi.livewash;
 
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -37,10 +36,10 @@ import java.util.Map;
  * ?>
  */
 
-public class WebServicesCallRead implements  Response.Listener<String>,
+public class WebServicesCallReadLaverie implements  Response.Listener<String>,
         Response.ErrorListener /* facultatif */ {
 
-  private Machine activity;
+  private Laverie activity;
   private String url;
   private RequestQueue queue;
 
@@ -49,7 +48,7 @@ public class WebServicesCallRead implements  Response.Listener<String>,
 
 
 
-  public WebServicesCallRead(Machine activity, String url) {
+  public WebServicesCallReadLaverie(Laverie activity, String url) {
     super();
     this.activity = activity;
     // Instancie la file de message (cet objet doit être un singleton)

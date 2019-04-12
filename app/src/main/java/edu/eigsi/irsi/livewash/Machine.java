@@ -61,10 +61,10 @@ public class Machine extends AppCompatActivity {
         heureDebut.setVisibility(View.GONE);
         heureFin.setVisibility(View.GONE);
 
+        String numMach = "";
 
         Intent intent = getIntent();
         if(intent != null){
-            String numMach = "";
             if(intent.hasExtra("numMach")){
                 numMach = intent.getStringExtra("numMach");
             }
@@ -125,14 +125,18 @@ public class Machine extends AppCompatActivity {
         buttonSignaler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signaler = new Intent(getApplicationContext() , Signaler.class);
-                startActivity(signaler);
-                finish();
+                //Intent signaler = new Intent(getApplicationContext() , Signaler.class);
+                //startActivity(signaler);
+                //finish();
             }
         });
 
 
     }
+
+
+
+
 
 
 }

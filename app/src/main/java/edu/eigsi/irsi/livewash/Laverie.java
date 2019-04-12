@@ -1,6 +1,7 @@
 package edu.eigsi.irsi.livewash;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,8 +21,11 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
     private ImageView buttonMach6;
     private ImageView buttonMach7;
     private ImageView buttonMach8;
-    private int numClick;
+    private ProgressDialog progress;
     private String numMachine;
+    private String libre;
+    private String occupe;
+    private String panne;
 
 
     @Override
@@ -47,6 +51,11 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         buttonMach7.setOnClickListener(this);
         this.buttonMach8 = (ImageView) findViewById(R.id.buttonMach8);
         buttonMach8.setOnClickListener(this);
+        libre ="L";
+        occupe="O";
+        panne="HS";
+
+
 
     }
 
@@ -122,7 +131,36 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    public void populateRead(String reponse) {
+        if (this.progress.isShowing())
+            this.progress.dismiss();
 
+        String[] etatmach = reponse.split(",");
+        String etatmach1 = etatmach[0];
+        String etatmach2 = etatmach[1];
+        String etatmach3 = etatmach[2];
+        String etatmach4 = etatmach[3];
+        String etatmach5 = etatmach[4];
+        String etatmach6 = etatmach[5];
+        String etatmach7 = etatmach[6];
+        String etatmach8 = etatmach[7];
+
+
+
+        if (libre.equals(reponse)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(reponse)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(reponse))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+    }
 
 
 

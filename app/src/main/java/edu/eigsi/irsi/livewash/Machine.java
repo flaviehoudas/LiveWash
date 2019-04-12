@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -39,6 +40,7 @@ public class Machine extends AppCompatActivity {
     String timeIni = sdfIni.format(dateIni);
     String timeFinal = sdfFinal.format(dateFinal);
     String timeNow = sdfNow.format(dateNow);
+    String numMach = "";
 
 
 
@@ -61,7 +63,7 @@ public class Machine extends AppCompatActivity {
         heureDebut.setVisibility(View.GONE);
         heureFin.setVisibility(View.GONE);
 
-        String numMach = "";
+
 
         Intent intent = getIntent();
         if(intent != null){
@@ -70,6 +72,8 @@ public class Machine extends AppCompatActivity {
             }
             nomMachine.setText("Machine n°" + numMach);
         }
+
+
 
 
         buttonRetour.setOnClickListener(new View.OnClickListener() {
@@ -81,14 +85,10 @@ public class Machine extends AppCompatActivity {
             }
         });
 
-
-
         buttonLancer.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-
-
                 heureDebut.setText("Heure de début du cycle : " + timeIni);
                 heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setBackgroundColor(getResources().getColor(R.color.blue));
@@ -98,39 +98,50 @@ public class Machine extends AppCompatActivity {
                 heureDebut.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.VISIBLE);
 
-                //lancerMachine();
-
+                lancerMachine();
             }
-
         });
 
         buttonVider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if (buttonVider.isChecked()){
-
                     //viderMachine();
-
                 }
-
             }
-
         });
-
-
-
-
 
         buttonSignaler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent signaler = new Intent(getApplicationContext() , Signaler.class);
-                //startActivity(signaler);
-                //finish();
+                Intent signaler = new Intent(getApplicationContext() , Signaler.class);
+                startActivity(signaler);
+                finish();
             }
         });
 
+
+    }
+
+    public void lancerMachine(){
+
+
+
+
+    }
+
+
+
+    // Fonction appelée par l'objet wscw
+    public void populateWrite(String reponse) {
+        if(this.progress.isShowing())
+            this.progress.dismiss();
+
+    }
+
+    public void populateRead(String reponse) {
+        if (this.progress.isShowing())
+            this.progress.dismiss();
 
     }
 

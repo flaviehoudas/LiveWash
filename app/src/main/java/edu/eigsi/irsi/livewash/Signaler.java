@@ -39,7 +39,7 @@ public class Signaler extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder myPopUp = new AlertDialog.Builder(activity);
-                myPopUp.setMessage("Le signalement a bien été pris en compte, nous vous remercions.");
+                myPopUp.setMessage("Le signalement a bien été pris en compte. Nous vous remercions pour votre contribution.");
                 myPopUp.show();
 
             }

@@ -79,12 +79,11 @@ public class WebServicesCallRead implements  Response.Listener<String>,
   @Override
   public void onResponse(String reponse) {
     Log.d("debug", reponse);
-    //activity.populateRead(reponse);
+    activity.populateRead(reponse);
   }
 
   @Override
   public void onErrorResponse(
       VolleyError volleyError) {
   }
-
 }

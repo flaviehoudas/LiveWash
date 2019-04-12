@@ -2,4 +2,5 @@
     <string name="app_name">LiveWash</string>
     <string name="laverie_bouton">Ma laverie</string>
     <string name="contact_bouton">Contact</string>
+    <string name="message_signaler">Le signalement a bien été pris en compte, nous vous remercions.</string>
 </resources>

@@ -1,6 +1,6 @@
 package edu.eigsi.irsi.livewash;
 
-import android.app.ProgressDialog;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,12 +45,6 @@ public class Machine1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_machine1);
 
-        @Override
-        public void onSaveInstanceState(Bundle savedInstanceState) {
-            //savedInstanceState.putString(COMMENTAIRE, mComment);
-
-            super.onSaveInstanceState(savedInstanceState);
-        }
 
         this.buttonLaverie1 = (Button) findViewById(R.id.buttonLaverie1);
         this.buttonLancer = (Button) findViewById(R.id.buttonLancer);

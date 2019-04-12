@@ -30,8 +30,8 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/emojisorry" />
+                    android:layout_height="wrap_content"/>
+                    //app:srcCompat="@drawable/emojisorry"
             </LinearLayout>
 
             <LinearLayout
@@ -105,7 +105,7 @@
                     android:text="Autre problème" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/buttonEnvoyer"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="2"

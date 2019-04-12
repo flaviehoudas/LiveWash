@@ -1,5 +1,6 @@
 package edu.eigsi.irsi.livewash;
 
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -39,7 +40,7 @@ import java.util.Map;
 public class WebServicesCallRead implements  Response.Listener<String>,
         Response.ErrorListener /* facultatif */ {
 
-  private final Laverie activity;
+  private Laverie activity;
   private String url;
   private RequestQueue queue;
 
@@ -78,7 +79,7 @@ public class WebServicesCallRead implements  Response.Listener<String>,
   @Override
   public void onResponse(String reponse) {
     Log.d("debug", reponse);
-    activity.populateRead(reponse);
+    //activity.populateRead(reponse);
   }
 
   @Override

@@ -36,29 +36,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingTop="10dp" />
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
 
                 <ImageView
                     android:id="@+id/buttonMach2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
 
                 <ImageView
                     android:id="@+id/buttonMach3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
 
                 <ImageView
                     android:id="@+id/buttonMach4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
 
 
             </LinearLayout>
@@ -75,28 +78,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
 
                 <ImageView
                     android:id="@+id/buttonMach6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingTop="10dp" />
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
 
                 <ImageView
                     android:id="@+id/buttonMach7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
 
                 <ImageView
                     android:id="@+id/buttonMach8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingTop="10dp" />
+                    android:paddingTop="10dp"
+                    app:srcCompat="@drawable/machineverte" />
             </LinearLayout>
         </LinearLayout>
 
@@ -109,7 +116,7 @@
 
             <Button
 
-                android:id="@+id/buttonRetour"
+                android:id="@+id/buttonRetourL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="10dp"

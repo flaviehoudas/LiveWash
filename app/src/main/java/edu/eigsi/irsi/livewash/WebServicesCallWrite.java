@@ -40,17 +40,19 @@ import java.util.Map;
 
 public class WebServicesCallWrite implements  Response.Listener<String>,
         Response.ErrorListener /* facultatif */ {
-  private final Laverie activity;
+  private Machine1 activity;
   private String url;
   private RequestQueue queue;
 
-  public WebServicesCallWrite(Laverie activity, String url) {
+  public WebServicesCallWrite(Machine1 activity, String url) {
     super();
     this.activity = activity;
     // Instancie la file de message (cet objet doit être un singleton)
     queue = Volley.newRequestQueue(activity);
     this.url = url;
   }
+
+
 
   public void write(final String filename, final String data) {
     StringRequest myReqWrite = new StringRequest(

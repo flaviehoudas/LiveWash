@@ -1,6 +1,23 @@
 <resources>
-    <string name="app_name">LiveWash</string>
-    <string name="laverie_bouton">Ma laverie</string>
-    <string name="contact_bouton">Contact</string>
-    <string name="message_signaler">Le signalement a bien été pris en compte, nous vous remercions.</string>
+    <string name="app_name_minuscule">LiveWash</string>
+    <string name="app_name_maj">LIVEWASH</string>
+
+    <string name="button_laverie">Ma laverie</string>
+    <string name="button_contact">Contact</string>
+    <string name="button_retour">Retour</string>
+
+    <string name="message_quel_pb">Quel probl"è"me voulez vous signaler ?</string>
+    <string name="pb_vibration">La machine vibre et fait du bruit anormal</string>
+    <string name="pb_allume">La machine ne s"'"allume pas</string>
+    <string name="pb_disponibilité">La machine est marqu"é" libre alors qu"'"elle est occupp"é" ou l"'"inverse</string>
+    <string name="pb_autre">Autre</string>
+    <string name="button_envoyer">Envoyer</string>
+
+    <string name="horaire_ouverture">Ouvert 7j/7 de 7h à 23h</string>
+    <string name="numero_tel">05.46.45.34.23</string>
+    <string name="adresse_mail">larochelle@livewash.fr</string>
+    <string name="adresse">8 rue des Acacias, 17000 La Rochelle</string>
+
+
+    <string name="message_signalement_recu">Le signalement a bien "é"t"é" pris en compte, nous vous remercions.</string>
 </resources>

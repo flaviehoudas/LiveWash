@@ -42,7 +42,7 @@
                 android:layout_weight="25"
                 android:focusableInTouchMode="false"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="LIVEWASH"
+                android:text="@string/app_name_maj"
                 android:textColor="@color/colorPrimary"
                 android:textSize="40sp"
                 android:textStyle="bold"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Ouvert 7j/7 de 7h à 23h"
+                android:text="@string/horaire_ouverture"
                 android:textSize="18sp" />
 
             <TextView
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="05.46.45.34.23"
+                android:text="@string/numero_tel"
                 android:textSize="18sp" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="larochelle@livewash.fr"
+                android:text="@string/adresse_mail"
                 android:textSize="18sp" />
 
             <TextView
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="8 rue des Acacias, 17000 La Rochelle"
+                android:text="@string/adresse"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="10dp"
-                android:text="Retour" />
+                android:text="@string/button_retour" />
         </LinearLayout>
 
     </LinearLayout>

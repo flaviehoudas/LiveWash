@@ -44,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Quel problème voulez vous signaler ?"
+                    android:text="@string/message_quel_pb"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -68,7 +68,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="La machine vibre et fait du bruit anormal" />
+                        android:text="@string/message_quel_pb" />
 
                     <RadioButton
                         android:id="@+id/radioButton4"
@@ -76,7 +76,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="La machine ne s'allume pas" />
+                        android:text="@string/pb_allume" />
 
                     <RadioButton
                         android:id="@+id/radioButton3"
@@ -84,32 +84,32 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="La machine est marqué libre alors qu'elle est occuppé ou l'inverse" />
+                        android:text="@string/pb_disponibilité" />
 
                     <RadioButton
-                        android:id="@+id/radioButton"
+                        android:id="@+id/radioButtonAutre"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Autre" />
+                        android:text="@string/pb_autre" />
 
                 </RadioGroup>
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/editTextAutre"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
+                    android:textSize="15sp"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Autre problème" />
+                    android:inputType="textPersonName" />
 
                 <Button
                     android:id="@+id/buttonEnvoyer"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:text="Envoyer" />
+                    android:text="@string/button_envoyer" />
 
             </LinearLayout>
         </LinearLayout>
@@ -124,7 +124,7 @@
                 android:id="@+id/buttonRmach1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Retour" />
+                android:text="@string/button_retour" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

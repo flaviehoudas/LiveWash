@@ -1,6 +1,5 @@
 package edu.eigsi.irsi.livewash;
 
-import android.content.Intent;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -15,60 +14,57 @@ import java.util.Map;
 
 /**
  * Created by Daniel on 18/09/2017.
- * Utilise le service Web read.php :
+ * Utilise le service Web write
  * Implémenté à l'aide de
  * la librairie volley (Google)
  * <?php
- * $filename = $_POST['filename'] . '.txt';
- * $data = "";
- * // obtenir identifiant du fichier filename en lecture
- * $fileHandle = fopen ( $filename, 'r' );
+ * // Récuperer le nom du fichier
+ * $filename = $_POST['filename'];
+ * // Récupérer la donnée
+ * $data  = $_POST['data'];
+ * // Memoriser data un fichier filename.txt
+ * $status = 'NO_OK';
+ * $fileHandle = fopen ( $filename . '.txt', 'w' );
  * if ($fileHandle) {
- *  // Tester si le fichier n'est pas utilisé et verrouiller l'accès
  * 	if (flock($fileHandle, LOCK_EX)) {
- * 	  // Lire une ligne du fichier et déverrouiller
- * 	  $data = fread($fileHandle, filesize($filename));
- * 	  flock($fileHandle, LOCK_UN);
+ * 			fwrite($fileHandle, $data);
+ * 			flock($fileHandle, LOCK_UN);
+ * 			$status = 'OK';
  *    }
- * 	fclose($fileHandle);
+ *     fclose($fileHandle);
  * }
- * // Retourner la donnée à l'appelant
- * echo $data;
+ * echo $status;
  * ?>
+ *
  */
 
-public class WebServicesCallReadLaverie implements  Response.Listener<String>,
+public class WebServicesCallWriteSignaler implements  Response.Listener<String>,
         Response.ErrorListener /* facultatif */ {
-
-  private Laverie activity;
+  private Signaler activity;
   private String url;
   private RequestQueue queue;
 
 
-
-
-
-
-  public WebServicesCallReadLaverie(Laverie activity, String url) {
+  public WebServicesCallWriteSignaler(Signaler activity, String url) {
     super();
     this.activity = activity;
     // Instancie la file de message (cet objet doit être un singleton)
     queue = Volley.newRequestQueue(activity);
     this.url = url;
+
   }
 
 
-  public void read(final String filename) {
+
+  public void write(final String filename, final String data) {
     StringRequest myReqWrite = new StringRequest(
-        Request.Method.POST,
-        url,
-        this,
-        null) {
+        Request.Method.POST, url, this, null) {
       @Override
       protected Map<String, String> getParams()
           throws com.android.volley.AuthFailureError {
         Map<String, String> params = new HashMap<String, String>();
         params.put("filename", filename);
+        params.put("data", data);
         return params;
       };
     };
@@ -76,15 +72,15 @@ public class WebServicesCallReadLaverie implements  Response.Listener<String>,
     queue.add(myReqWrite);
   }
 
+
   @Override
   public void onResponse(String reponse) {
     Log.d("debug", reponse);
-    activity.populateRead(reponse);
+    activity.populateWrite(reponse);
   }
 
   @Override
   public void onErrorResponse(
       VolleyError volleyError) {
   }
-
 }

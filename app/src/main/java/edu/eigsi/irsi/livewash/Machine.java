@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,8 +26,17 @@ public class Machine extends AppCompatActivity {
     private Button buttonSignaler;
     private TextView nomMachine;
     private String numeroMach;
+    Boolean click1;
+    Boolean click2;
+    Boolean click3;
+    Boolean click4;
+    Boolean click5;
+    Boolean click6;
+    Boolean click7;
+    Boolean click8;
 
-    public static final String prefsFile = "MyPrefsFile";
+
+
 
 
     Date dateIni = new Date();
@@ -43,9 +53,6 @@ public class Machine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_machine);
 
-
-
-
         this.buttonRetour = (Button) findViewById(R.id.buttonRetourM);
         this.buttonLancer = (Button) findViewById(R.id.buttonLancer);
         this.buttonVider = (Switch) findViewById(R.id.buttonVider);
@@ -53,16 +60,6 @@ public class Machine extends AppCompatActivity {
         this.heureDebut=  (TextView) findViewById(R.id.heureDebut);
         this.heureFin = (TextView)  findViewById(R.id.heureFin);
         this.nomMachine = (TextView)  findViewById(R.id.nomMachine);
-        buttonVider.setVisibility(View.GONE);
-        heureDebut.setVisibility(View.GONE);
-        heureFin.setVisibility(View.GONE);
-        numeroMach = getNumMach();
-
-        buttonLancer.setVisibility(View.VISIBLE);
-
-
-        getNumMach();
-
         //------------------------------------------------
         this.progress = new ProgressDialog(this);
         this.progress.setTitle("Veuillez patientez");
@@ -70,7 +67,18 @@ public class Machine extends AppCompatActivity {
         this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         //------------------------------------------------
 
+        numeroMach = getNumMach();
 
+        final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        click1 = sp.getBoolean("BUTTON1",false);
+        click2 = sp.getBoolean("BUTTON2",false);
+        click3 = sp.getBoolean("BUTTON3",false);
+        click4 = sp.getBoolean("BUTTON4",false);
+        click5 = sp.getBoolean("BUTTON5",false);
+        click6 = sp.getBoolean("BUTTON6",false);
+        click7 = sp.getBoolean("BUTTON7",false);
+        click8 = sp.getBoolean("BUTTON8",false);
+        buttonSwapping();
 
         buttonRetour.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,14 +93,64 @@ public class Machine extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
-                buttonVider.setVisibility(View.VISIBLE);
-                heureDebut.setVisibility(View.VISIBLE);
-                heureFin.setVisibility(View.VISIBLE);
-                buttonLancer.setVisibility(View.GONE);
-
                 lancerMachine();
+
+                if(numeroMach.equals("1")) {
+                    click1 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON1", click1);
+                    edit.commit();
+                    buttonSwapping();
+                }
+                if(numeroMach.equals("2")) {
+                    click2 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON2", click2);
+                    edit.commit();
+                    buttonSwapping();
+                }
+                if(numeroMach.equals("3")) {
+                    click3 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON3", click3);
+                    edit.commit();
+                    buttonSwapping();
+                }
+                if(numeroMach.equals("4")) {
+                    click4 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON4", click4);
+                    edit.commit();
+                    buttonSwapping();
+                }
+                if(numeroMach.equals("5")) {
+                    click5 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON5", click5);
+                    edit.commit();
+                    buttonSwapping();
+                }
+                if(numeroMach.equals("6")) {
+                    click6 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON6", click6);
+                    edit.commit();
+                    buttonSwapping();
+                }
+                if(numeroMach.equals("7")) {
+                    click7 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON7", click7);
+                    edit.commit();
+                    buttonSwapping();
+                }
+                if(numeroMach.equals("8")) {
+                    click8 = true;
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putBoolean("BUTTON8", click8);
+                    edit.commit();
+                    buttonSwapping();
+                }
             }
         });
 
@@ -101,6 +159,62 @@ public class Machine extends AppCompatActivity {
             public void onClick(View view) {
                 if (buttonVider.isChecked()){
                     viderMachine();
+                    if(numeroMach.equals("1")) {
+                        click1 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON1", click1);
+                        edit.commit();
+                        buttonSwapping();
+                    }
+                    if(numeroMach.equals("2")) {
+                        click2 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON2", click2);
+                        edit.commit();
+                        buttonSwapping();
+                    }
+                    if(numeroMach.equals("3")) {
+                        click3 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON3", click3);
+                        edit.commit();
+                        buttonSwapping();
+                    }
+                    if(numeroMach.equals("4")) {
+                        click4 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON4", click4);
+                        edit.commit();
+                        buttonSwapping();
+                    }
+                    if(numeroMach.equals("5")) {
+                        click5 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON5", click5);
+                        edit.commit();
+                        buttonSwapping();
+                    }
+                    if(numeroMach.equals("6")) {
+                        click6 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON6", click6);
+                        edit.commit();
+                        buttonSwapping();
+                    }
+                    if(numeroMach.equals("7")) {
+                        click7 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON7", click7);
+                        edit.commit();
+                        buttonSwapping();
+                    }
+                    if(numeroMach.equals("8")) {
+                        click8 = false;
+                        SharedPreferences.Editor edit = sp.edit();
+                        edit.putBoolean("BUTTON8", click8);
+                        edit.commit();
+                        buttonSwapping();
+                    }
                 }
             }
         });
@@ -238,6 +352,7 @@ public class Machine extends AppCompatActivity {
                         + "," + etatmach4 + "," + etatmach5 + "," + etatmach6 + ","
                         + etatmach7 + ",L");
             }
+            buttonVider.setChecked(false);
         }
 
     }
@@ -260,6 +375,147 @@ public class Machine extends AppCompatActivity {
         }
         return numMach;
     }
+
+    public void buttonSwapping(){
+        if(numeroMach.equals("1")){
+            if(click1) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+        if(numeroMach.equals("2")){
+            if(click2) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+        if(numeroMach.equals("3")){
+            if(click3) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+        if(numeroMach.equals("4")){
+            if(click4) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+        if(numeroMach.equals("5")){
+            if(click5) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+        if(numeroMach.equals("6")){
+            if(click6) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+        if(numeroMach.equals("7")){
+            if(click7) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+        if(numeroMach.equals("8")){
+            if(click8) {
+                heureDebut.setText("Heure de début du cycle : " + timeIni);
+                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                buttonLancer.setVisibility(View.GONE);
+                heureFin.setVisibility(View.VISIBLE);
+                heureDebut.setVisibility(View.VISIBLE);
+                buttonVider.setVisibility(View.VISIBLE);
+            }
+
+            else{
+                buttonLancer.setVisibility(View.VISIBLE);
+                heureFin.setVisibility(View.GONE);
+                heureDebut.setVisibility(View.GONE);
+                buttonVider.setVisibility(View.GONE);
+            }
+        }
+
+    }
+
 
 
     }

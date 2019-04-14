@@ -30,7 +30,7 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     app:srcCompat="@drawable/emojisorry" />
             </LinearLayout>
 
@@ -43,7 +43,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:gravity="center|center_horizontal|center_vertical"
                     android:text="@string/message_quel_pb"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -51,70 +51,86 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="10dp"
                 android:layout_weight="10"
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/radioGroup"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="25"
+                    android:layout_marginLeft="20sp"
+                    android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/radioButton6"
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:textSize="17sp"
                         android:layout_weight="1"
-                        android:text="@string/message_quel_pb" />
+                        android:gravity="center_horizontal">
 
-                    <RadioButton
-                        android:id="@+id/radioButton4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:textSize="17sp"
-                        android:text="@string/pb_allume" />
+                        <RadioButton
+                            android:id="@+id/buttonBruit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="@string/pb_bruit"
+                            android:textSize="17sp" />
 
-                    <RadioButton
-                        android:id="@+id/radioButton3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:textSize="17sp"
-                        android:text="@string/pb_disponibilité" />
+                        <RadioButton
+                            android:id="@+id/buttonAllume"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/pb_allume"
+                            android:textSize="17sp" />
 
-                    <RadioButton
-                        android:id="@+id/radioButtonAutre"
+                        <RadioButton
+                            android:id="@+id/buttonDispo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/pb_dispo"
+                            android:textSize="17sp" />
+
+
+                        <RadioButton
+                            android:id="@+id/radioButtonAutre"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/pb_autre"
+                            android:textSize="17sp" />
+
+
+                        <EditText
+                            android:id="@+id/editTextAutre"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:inputType="textPersonName"
+                            android:hint="Autre problème"
+                            android:textSize="15sp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="75"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+
+                    <Button
+                        android:id="@+id/buttonEnvoyer"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textSize="17sp"
-                        android:text="@string/pb_autre" />
-
-                </RadioGroup>
-
-                <EditText
-                    android:id="@+id/editTextAutre"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:textSize="15sp"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-
-                <Button
-                    android:id="@+id/buttonEnvoyer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:text="@string/button_envoyer" />
+                        android:text="@string/button_envoyer" />
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>

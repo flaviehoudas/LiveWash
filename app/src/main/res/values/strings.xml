@@ -10,10 +10,10 @@
     <string name="button_lancer_machine">Lancer un cycle (1h30)</string>
 
 
-    <string name="message_quel_pb">Quel probl"è"me voulez vous signaler ?</string>
-    <string name="pb_vibration">La machine vibre et fait du bruit anormal</string>
+    <string name="message_quel_pb">Quel probl"è"me voulez-vous signaler ?</string>
+    <string name="pb_bruit">La machine fait un bruit anormal</string>
     <string name="pb_allume">La machine ne s"'"allume pas</string>
-    <string name="pb_disponibilité">La machine est marqu"é" libre alors qu"'"elle est occupp"é" ou l"'"inverse</string>
+    <string name="pb_dispo">La disponibilit"é" de la machine est incorrecte</string>
     <string name="pb_autre">Autre</string>
 
     <string name="vide"> </string>
@@ -24,5 +24,6 @@
     <string name="adresse">8 rue des Acacias, 17000 La Rochelle</string>
 
 
-    <string name="message_signalement_recu">Le signalement a bien "é"t"é" pris en compte, nous vous remercions.</string>
+    <string name="message_signalement_recu">Le signalement a bien "é"t"é" pris en compte, nous vous
+        remercions pour votre contribution.</string>
 </resources>

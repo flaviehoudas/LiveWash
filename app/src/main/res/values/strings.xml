@@ -5,13 +5,18 @@
     <string name="button_laverie">Ma laverie</string>
     <string name="button_contact">Contact</string>
     <string name="button_retour">Retour</string>
+    <string name="button_envoyer">Envoyer</string>
+    <string name="button_signaler">Signaler un probl"è"me</string>
+    <string name="button_lancer_machine">Lancer un cycle (1h30)</string>
+
 
     <string name="message_quel_pb">Quel probl"è"me voulez vous signaler ?</string>
     <string name="pb_vibration">La machine vibre et fait du bruit anormal</string>
     <string name="pb_allume">La machine ne s"'"allume pas</string>
     <string name="pb_disponibilité">La machine est marqu"é" libre alors qu"'"elle est occupp"é" ou l"'"inverse</string>
     <string name="pb_autre">Autre</string>
-    <string name="button_envoyer">Envoyer</string>
+
+    <string name="vide"> </string>
 
     <string name="horaire_ouverture">Ouvert 7j/7 de 7h à 23h</string>
     <string name="numero_tel">05.46.45.34.23</string>

@@ -30,12 +30,14 @@
                     android:id="@+id/nomMachine"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/moussesavon"
                     android:gravity="center_horizontal|center_vertical"
                     android:paddingTop="10sp"
                     android:paddingBottom="10sp"
-                    android:text="Machine"
+                    android:text="Machine "
+                    android:textStyle="bold"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="40sp" />
+                    android:textSize="35sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -51,8 +53,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text=""
-                    android:textColor="#00BFFF"
+                    android:text="@string/vide"
+                    android:textColor="@color/colorTempsMachine"
                     android:textSize="20sp" />
 
                 <TextView
@@ -60,8 +62,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text=""
-                    android:textColor="#00BFFF"
+                    android:text="@string/vide"
+                    android:textColor="@color/colorTempsMachine"
                     android:textSize="20sp" />
 
                 <Switch
@@ -83,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="Lancer un cycle (1h30)"
+                    android:text="@string/button_lancer_machine"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -119,7 +121,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="Signaler un problème"
+                    android:text="@string/button_signaler"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -137,7 +139,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Retour" />
+                android:text="@string/button_retour" />
         </LinearLayout>
 
     </LinearLayout>

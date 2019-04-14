@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Signaler extends AppCompatActivity {
@@ -18,6 +20,7 @@ public class Signaler extends AppCompatActivity {
     private Signaler activity;
     private RadioButton buttonAutre;
     private EditText editText;
+
 
 
     @Override
@@ -32,7 +35,7 @@ public class Signaler extends AppCompatActivity {
         buttonRmach1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent retourmach1 = new Intent(getApplicationContext(), Machine1.class);
+                Intent retourmach1 = new Intent(getApplicationContext(), Machine.class);
                 startActivity(retourmach1);
                 finish();
                     }
@@ -49,12 +52,7 @@ public class Signaler extends AppCompatActivity {
             }
         });
 
-        editText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editText.clearFocus();
-            }
-        });
+
 
         this.buttonEnvoyer = (Button) findViewById(R.id.buttonEnvoyer);
 
@@ -75,6 +73,7 @@ public class Signaler extends AppCompatActivity {
 
             }
         });
+
     }
 
     }

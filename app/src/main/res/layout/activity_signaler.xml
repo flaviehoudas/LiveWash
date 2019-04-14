@@ -30,8 +30,8 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                    //app:srcCompat="@drawable/emojisorry"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/emojisorry" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,6 +58,7 @@
                 android:orientation="vertical">
 
                 <RadioGroup
+                    android:id="@+id/radioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
@@ -67,6 +68,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
+                        android:textSize="17sp"
                         android:layout_weight="1"
                         android:text="@string/message_quel_pb" />
 
@@ -76,6 +78,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:textSize="17sp"
                         android:text="@string/pb_allume" />
 
                     <RadioButton
@@ -84,6 +87,7 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:textSize="17sp"
                         android:text="@string/pb_disponibilité" />
 
                     <RadioButton
@@ -91,6 +95,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:textSize="17sp"
                         android:text="@string/pb_autre" />
 
                 </RadioGroup>

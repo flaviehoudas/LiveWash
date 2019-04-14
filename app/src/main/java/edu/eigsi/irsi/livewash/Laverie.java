@@ -56,6 +56,22 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         panne="HS";
 
 
+        // Lignes facultatives
+        //------------------------------------------------
+        this.progress = new ProgressDialog(this);
+        this.progress.setTitle("Veuillez patientez");
+        this.progress.setMessage("Récupération du résultat en cours...");
+        this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        this.progress.show();
+        //------------------------------------------------
+
+
+        String url;
+        // Appel du service read
+        this.progress.show();
+        url = "http://qcmjava.eigsi.fr/data/read.php";
+        WebServicesCallReadLaverie wscr = new WebServicesCallReadLaverie(this, url);
+        wscr.read("local");
 
     }
 
@@ -131,8 +147,12 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+
+
+
+    // Fonction appelée par l'objet wscr
     public void populateRead(String reponse) {
-        if (this.progress.isShowing())
+        if(this.progress.isShowing())
             this.progress.dismiss();
 
         String[] etatmach = reponse.split(",");
@@ -147,20 +167,122 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
 
 
 
-        if (libre.equals(reponse)) {
+
+        if (libre.equals(etatmach1)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
             machine.setImageResource(R.drawable.machineverte);
         }
-        if (occupe.equals(reponse)) {
+        if (occupe.equals(etatmach1)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
             machine.setImageResource(R.drawable.machinerouge);
         }
-        if (panne.equals(reponse))  {
+        if (panne.equals(etatmach1))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
             machine.setImageResource(R.drawable.machinepanne);
         }
 
+
+        if (libre.equals(etatmach2)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach2);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(etatmach2)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach2);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(etatmach2))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach2);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+
+        if (libre.equals(etatmach3)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach3);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(etatmach3)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach3);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(etatmach3))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach3);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+
+        if (libre.equals(etatmach4)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach4);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(etatmach4)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach4);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(etatmach4))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach4);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+
+        if (libre.equals(etatmach5)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach5);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(etatmach5)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach5);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(etatmach5))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach5);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+
+        if (libre.equals(etatmach6)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach6);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(etatmach6)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach6);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(etatmach6))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach6);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+
+        if (libre.equals(etatmach7)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach7);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(etatmach7)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach7);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(etatmach7))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach7);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+
+        if (libre.equals(etatmach8)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach8);
+            machine.setImageResource(R.drawable.machineverte);
+        }
+        if (occupe.equals(etatmach8)) {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach8);
+            machine.setImageResource(R.drawable.machinerouge);
+        }
+        if (panne.equals(etatmach8))  {
+            ImageView machine = (ImageView) findViewById(R.id.buttonMach8);
+            machine.setImageResource(R.drawable.machinepanne);
+        }
+
+
     }
+
+
 
 
 

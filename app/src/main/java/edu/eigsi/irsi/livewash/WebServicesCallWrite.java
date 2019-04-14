@@ -44,12 +44,14 @@ public class WebServicesCallWrite implements  Response.Listener<String>,
   private String url;
   private RequestQueue queue;
 
+
   public WebServicesCallWrite(Machine activity, String url) {
     super();
     this.activity = activity;
     // Instancie la file de message (cet objet doit être un singleton)
     queue = Volley.newRequestQueue(activity);
     this.url = url;
+
   }
 
 
@@ -70,10 +72,11 @@ public class WebServicesCallWrite implements  Response.Listener<String>,
     queue.add(myReqWrite);
   }
 
+
   @Override
   public void onResponse(String reponse) {
     Log.d("debug", reponse);
-    //activity.populateWrite(reponse);
+    activity.populateWrite(reponse);
   }
 
   @Override

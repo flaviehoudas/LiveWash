@@ -36,15 +36,12 @@ public class Machine extends AppCompatActivity {
     Boolean click8;
 
 
-
-
-
     Date dateIni = new Date();
-    Date dateToAdd = new Date(90*1000);
-    Date dateFinal = new Date(dateIni.getTime() + dateToAdd.getTime());
     SimpleDateFormat sdfIni = new SimpleDateFormat("HH:mm");
-    SimpleDateFormat sdfFinal = new SimpleDateFormat("HH:mm");
     String timeIni = sdfIni.format(dateIni);
+    Date dateToAdd = new Date(5400*1000);
+    Date dateFinal = new Date(dateIni.getTime() + dateToAdd.getTime());
+    SimpleDateFormat sdfFinal = new SimpleDateFormat("HH:mm");
     String timeFinal = sdfFinal.format(dateFinal);
 
 
@@ -60,15 +57,16 @@ public class Machine extends AppCompatActivity {
         this.heureDebut=  (TextView) findViewById(R.id.heureDebut);
         this.heureFin = (TextView)  findViewById(R.id.heureFin);
         this.nomMachine = (TextView)  findViewById(R.id.nomMachine);
-        //------------------------------------------------
+        numeroMach = getNumMach();
+
+        //---------------Fenêtre de chargement--------
         this.progress = new ProgressDialog(this);
         this.progress.setTitle("Veuillez patientez");
         this.progress.setMessage("Récupération du résultat en cours...");
         this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        //------------------------------------------------
 
-        numeroMach = getNumMach();
 
+        //-----Enregistrer les états des boutons en utilisant SharedPrefereces---------
         final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         click1 = sp.getBoolean("BUTTON1",false);
         click2 = sp.getBoolean("BUTTON2",false);
@@ -79,6 +77,8 @@ public class Machine extends AppCompatActivity {
         click7 = sp.getBoolean("BUTTON7",false);
         click8 = sp.getBoolean("BUTTON8",false);
         buttonSwapping();
+
+
 
         buttonRetour.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,62 +93,70 @@ public class Machine extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                lancerMachine();
-
+                swapMachine();
+                //----Mets à jour le bouton cliqué dans SharedPreferences
+                //Machine1
                 if(numeroMach.equals("1")) {
                     click1 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON1", click1);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
+                //Machine2
                 if(numeroMach.equals("2")) {
                     click2 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON2", click2);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
+                //Machine3
                 if(numeroMach.equals("3")) {
                     click3 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON3", click3);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
+                //Machine4
                 if(numeroMach.equals("4")) {
                     click4 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON4", click4);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
+                //Machine5
                 if(numeroMach.equals("5")) {
                     click5 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON5", click5);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
+                //Machine6
                 if(numeroMach.equals("6")) {
                     click6 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON6", click6);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
+                //Machine7
                 if(numeroMach.equals("7")) {
                     click7 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON7", click7);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
+                //Machine8
                 if(numeroMach.equals("8")) {
                     click8 = true;
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putBoolean("BUTTON8", click8);
-                    edit.commit();
+                    edit.apply();
                     buttonSwapping();
                 }
             }
@@ -158,61 +166,69 @@ public class Machine extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (buttonVider.isChecked()){
-                    viderMachine();
+                    swapMachine();
+                    //Machine1
                     if(numeroMach.equals("1")) {
                         click1 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON1", click1);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
+                    //Machine2
                     if(numeroMach.equals("2")) {
                         click2 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON2", click2);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
+                    //Machine3
                     if(numeroMach.equals("3")) {
                         click3 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON3", click3);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
+                    //Machine4
                     if(numeroMach.equals("4")) {
                         click4 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON4", click4);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
+                    //Machine5
                     if(numeroMach.equals("5")) {
                         click5 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON5", click5);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
+                    //Machine6
                     if(numeroMach.equals("6")) {
                         click6 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON6", click6);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
+                    //Machine7
                     if(numeroMach.equals("7")) {
                         click7 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON7", click7);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
+                    //Machine8
                     if(numeroMach.equals("8")) {
                         click8 = false;
                         SharedPreferences.Editor edit = sp.edit();
                         edit.putBoolean("BUTTON8", click8);
-                        edit.commit();
+                        edit.apply();
                         buttonSwapping();
                     }
                 }
@@ -229,39 +245,29 @@ public class Machine extends AppCompatActivity {
             }
         });
 
-
     }
 
-    public void lancerMachine(){
-
+    /**
+     * Appel du sercice permettant de lire les données du réseau
+     */
+    public void swapMachine(){
         String url;
-        // Appel du service read
         this.progress.show();
         url = "http://qcmjava.eigsi.fr/data/read.php";
         WebServicesCallRead wscr = new WebServicesCallRead(this, url);
         wscr.read("local");
-
     }
 
 
-    public void viderMachine(){
-
-        String url;
-        // Appel du service read
-        this.progress.show();
-        url = "http://qcmjava.eigsi.fr/data/read.php";
-        WebServicesCallRead wscr = new WebServicesCallRead(this, url);
-        wscr.read("local");
-
-
-    }
-
-
-    // Fonction appelée par l'objet wscr
+    /**
+     * Fonction de lecture appelée par l'objet wscr
+     * @param reponse les données stockées sur le réseau
+     */
     public void populateRead(String reponse) {
         if (this.progress.isShowing())
             this.progress.dismiss();
 
+        //Récupération des données du réseau
         String[] etatmach = reponse.split(",");
         String etatmach1 = etatmach[0];
         String etatmach2 = etatmach[1];
@@ -278,75 +284,91 @@ public class Machine extends AppCompatActivity {
         // Instanciation du Web Service
         WebServicesCallWrite wscw = new WebServicesCallWrite(this, url);
 
+        //-----Déclare la machine choisie comme étant occupée
         if (!buttonVider.isChecked()){
-            // Appel de la fonction write
+            //Machine1
             if (numeroMach.equals("1")) {
                 wscw.write("local", "O," + etatmach2 + "," + etatmach3 + "," +
                         etatmach4 + "," + etatmach5 + "," + etatmach6 + "," + etatmach7
                         + "," + etatmach8);
             }
+            //Machine2
             if (numeroMach.equals("2")) {
                 wscw.write("local", etatmach1 + ",O" + "," + etatmach3 + ","
                         + etatmach4 + "," + etatmach5 + "," + etatmach6 + "," + etatmach7 + "," +
                         etatmach8);
             }
+            //Machine3
             if (numeroMach.equals("3")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + ",O," + etatmach4
                         + "," + etatmach5 + "," + etatmach6 + "," + etatmach7 + "," + etatmach8);
             }
+            //Machine4
             if (numeroMach.equals("4")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3 +
                         ",O," + etatmach5 + "," + etatmach6 + "," + etatmach7 +  "," + etatmach8);
             }
+            //Machine5
             if (numeroMach.equals("5")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3
                         + "," + etatmach4 + ",O," + etatmach6 + "," + etatmach7 +  "," + etatmach8);
             }
+            //Machine6
             if (numeroMach.equals("6")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3 + ","
                         + etatmach4  + "," + etatmach5 + ",O," + etatmach7 + "," + etatmach8);
             }
+            //Machine7
             if (numeroMach.equals("7")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3 + ","
                         + etatmach4  + "," + etatmach5 + "," + etatmach6 + ",O," + etatmach8);
             }
+            //Machine8
             if (numeroMach.equals("8")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3 + ","
                         + etatmach4  + "," + etatmach5 + "," + etatmach6 + "," + etatmach7 + ",O");
             }
         }
 
+        //-----Déclare la machine choisie comme étant libre
         if (buttonVider.isChecked()){
-            // Appel de la fonction write
+            // Machine1
             if (numeroMach.equals("1")) {
                 wscw.write("local", "L," + etatmach2 + "," + etatmach3 + "," +
                         etatmach4 + "," + etatmach5 + "," + etatmach6 + "," + etatmach7
                         + "," + etatmach8);
             }
+            // Machine2
             if (numeroMach.equals("2")) {
                 wscw.write("local", etatmach1 + ",L," + etatmach3 + "," + etatmach4
                         + "," + etatmach5 + "," + etatmach6 + "," + etatmach7 + "," + etatmach8);
             }
+            // Machine3
             if (numeroMach.equals("3")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + ",L," + etatmach4
                         + "," + etatmach5 + "," + etatmach6 + "," + etatmach7 + "," + etatmach8);
             }
+            // Machine4
             if (numeroMach.equals("4")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3
                         + ",L," + etatmach5 + "," + etatmach6 + "," + etatmach7 + "," + etatmach8);
             }
+            // Machine5
             if (numeroMach.equals("5")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3
                         + "," + etatmach4 + ",L," + etatmach6 + "," + etatmach7 + "," + etatmach8);
             }
+            // Machine6
             if (numeroMach.equals("6")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3
                         + "," + etatmach4 + "," + etatmach5 + ",L," + etatmach7 + "," + etatmach8);
             }
+            // Machine7
             if (numeroMach.equals("7")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3
                         + "," + etatmach4 + "," + etatmach5 + "," + etatmach6 + ",L," + etatmach8);
             }
+            // Machine8
             if (numeroMach.equals("8")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + "," + etatmach3
                         + "," + etatmach4 + "," + etatmach5 + "," + etatmach6 + ","
@@ -357,13 +379,20 @@ public class Machine extends AppCompatActivity {
 
     }
 
-    // Fonction appelée par l'objet wscw
+    /**
+     *  Fonction écriture appelée par l'objet wscw
+     * @param reponse les données stockées sur le réseau
+     */
     public void populateWrite(String reponse) {
         if(this.progress.isShowing())
             this.progress.dismiss();
 
     }
 
+    /**
+     *  Retourne un String qui complète le titre de l'activity
+     * @return numMach le numéro de la machine choisie
+     */
     public String getNumMach(){
         String numMach ="";
         Intent intent = getIntent();
@@ -376,17 +405,20 @@ public class Machine extends AppCompatActivity {
         return numMach;
     }
 
+    /**
+     * Change la visibilité de certains objets
+     */
     public void buttonSwapping(){
+        // Machine1
         if(numeroMach.equals("1")){
             if(click1) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -394,16 +426,14 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+        // Machine2
         if(numeroMach.equals("2")){
             if(click2) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -411,16 +441,14 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+        // Machine3
         if(numeroMach.equals("3")){
             if(click3) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -428,16 +456,14 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+        // Machine4
         if(numeroMach.equals("4")){
             if(click4) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -445,16 +471,14 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+        // Machine5
         if(numeroMach.equals("5")){
             if(click5) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -462,16 +486,14 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+        // Machine6
         if(numeroMach.equals("6")){
             if(click6) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -479,16 +501,14 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+        // Machine7
         if(numeroMach.equals("7")){
             if(click7) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -496,16 +516,14 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+        // Machine8
         if(numeroMach.equals("8")){
             if(click8) {
-                heureDebut.setText("Heure de début du cycle : " + timeIni);
-                heureFin.setText("Heure de fin du cycle : " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
                 buttonVider.setVisibility(View.VISIBLE);
             }
-
             else{
                 buttonLancer.setVisibility(View.VISIBLE);
                 heureFin.setVisibility(View.GONE);
@@ -513,9 +531,7 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
-
     }
 
 
-
-    }
+}

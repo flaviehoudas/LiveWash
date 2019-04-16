@@ -37,15 +37,20 @@ public class Signaler extends AppCompatActivity {
         this.activity=this;
         numeroMach = getNumMach();
         this.buttonRmach1 = (Button) findViewById(R.id.buttonRmach1);
+        this.buttonAutre = (RadioButton) findViewById(R.id.radioButtonAutre);
+        this.buttonBruit = (RadioButton) findViewById(R.id.buttonBruit);
+        this.buttonDispo = (RadioButton) findViewById(R.id.buttonDispo);
+        this.buttonAllume = (RadioButton) findViewById(R.id.buttonAllume);
+        this.buttonEnvoyer = (Button) findViewById(R.id.buttonEnvoyer);
+        this.editText = (EditText) findViewById(R.id.editTextAutre);
+        editText.setVisibility(View.GONE);
 
 
-        //------------------------------------------------
+        //-----------------Fenêtre de chargement---------------
         this.progress = new ProgressDialog(this);
         this.progress.setTitle("Veuillez patientez");
         this.progress.setMessage("Récupération du résultat en cours...");
         this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        //------------------------------------------------
-
 
 
         buttonRmach1.setOnClickListener(new View.OnClickListener() {
@@ -58,13 +63,6 @@ public class Signaler extends AppCompatActivity {
                     }
                 });
 
-        this.buttonAutre = (RadioButton) findViewById(R.id.radioButtonAutre);
-        this.buttonBruit = (RadioButton) findViewById(R.id.buttonBruit);
-        this.buttonDispo = (RadioButton) findViewById(R.id.buttonDispo);
-        this.buttonAllume = (RadioButton) findViewById(R.id.buttonAllume);
-        this.editText = (EditText) findViewById(R.id.editTextAutre);
-        editText.setVisibility(View.GONE);
-
 
         buttonAutre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,9 +71,6 @@ public class Signaler extends AppCompatActivity {
             }
         });
 
-
-
-        this.buttonEnvoyer = (Button) findViewById(R.id.buttonEnvoyer);
 
         buttonEnvoyer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +98,9 @@ public class Signaler extends AppCompatActivity {
 
     }
 
+    /**
+     * Appel du sercice permettant de lire les données du réseau
+     */
     public void putHS(){
         String url;
         // Appel du service read
@@ -112,7 +110,10 @@ public class Signaler extends AppCompatActivity {
         wscr.read("local");
     }
 
-    // Fonction appelée par l'objet wscr
+    /**
+     * Fonction de lecture appelée par l'objet wscr
+     * @param reponse les données stockées sur le réseau
+     */
     public void populateRead(String reponse) {
         if (this.progress.isShowing())
             this.progress.dismiss();
@@ -175,13 +176,20 @@ public class Signaler extends AppCompatActivity {
 
     }
 
-    // Fonction appelée par l'objet wscw
+    /**
+     * Fonction de lecture appelée par l'objet wscr
+     * @param reponse les données stockées sur le réseau
+     */
     public void populateWrite(String reponse) {
         if(this.progress.isShowing())
             this.progress.dismiss();
 
     }
 
+    /**
+     *  Retourne un String qui complète le titre de l'activity
+     * @return numMach le numéro de la machine choisie
+     */
     public String getNumMach(){
         String numMach ="";
         Intent intent = getIntent();

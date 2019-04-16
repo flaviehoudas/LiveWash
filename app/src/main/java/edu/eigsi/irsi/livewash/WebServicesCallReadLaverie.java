@@ -44,11 +44,11 @@ public class WebServicesCallReadLaverie implements  Response.Listener<String>,
   private String url;
   private RequestQueue queue;
 
-
-
-
-
-
+  /**
+   * Instancifie la file de message
+   * @param activity l'activité active
+   * @param url l'url du fichier de lecture
+   */
   public WebServicesCallReadLaverie(Laverie activity, String url) {
     super();
     this.activity = activity;
@@ -57,7 +57,10 @@ public class WebServicesCallReadLaverie implements  Response.Listener<String>,
     this.url = url;
   }
 
-
+  /**
+   * Lance la lecture du fichier du réseau
+   * @param filename le fichier utilisé
+   */
   public void read(final String filename) {
     StringRequest myReqWrite = new StringRequest(
         Request.Method.POST,
@@ -76,12 +79,20 @@ public class WebServicesCallReadLaverie implements  Response.Listener<String>,
     queue.add(myReqWrite);
   }
 
+  /**
+   * Gère la réponse du réseau
+   * @param reponse les données stockées sur le réseau
+   */
   @Override
   public void onResponse(String reponse) {
     Log.d("debug", reponse);
     activity.populateRead(reponse);
   }
 
+  /**
+   * Gère les eventuelles erreurs
+   * @param volleyError erreur de la bibliothèque détectée
+   */
   @Override
   public void onErrorResponse(
       VolleyError volleyError) {

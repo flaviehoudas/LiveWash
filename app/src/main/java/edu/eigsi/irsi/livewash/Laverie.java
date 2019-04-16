@@ -55,26 +55,22 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         occupe="O";
         panne="HS";
 
-
-        // Lignes facultatives
-        //------------------------------------------------
+        //----------Fenêtre de chargement-----------------
         this.progress = new ProgressDialog(this);
         this.progress.setTitle("Veuillez patientez");
         this.progress.setMessage("Récupération du résultat en cours...");
         this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         this.progress.show();
-        //------------------------------------------------
 
 
-        String url;
         // Appel du service read
+        String url;
         this.progress.show();
         url = "http://qcmjava.eigsi.fr/data/read.php";
         WebServicesCallReadLaverie wscr = new WebServicesCallReadLaverie(this, url);
         wscr.read("local");
 
     }
-
 
 
     public void onClick(View v) {
@@ -85,7 +81,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
                 startActivity(ouvrirMain);
                 finish();
                 break;
-
 
             case R.id.buttonMach1:
                 numMachine = "1";
@@ -143,18 +138,19 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
                 startActivity(ouvrirMachine8);
                 finish();
                 break;
-
         }
     }
 
 
-
-
-    // Fonction appelée par l'objet wscr
+    /**
+     * Fonction de lecture appelée par l'objet wscr
+     * @param reponse les données stockées sur le réseau
+     */
     public void populateRead(String reponse) {
         if(this.progress.isShowing())
             this.progress.dismiss();
 
+        //Récupération des données du réseau
         String[] etatmach = reponse.split(",");
         String etatmach1 = etatmach[0];
         String etatmach2 = etatmach[1];
@@ -166,8 +162,8 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         String etatmach8 = etatmach[7];
 
 
-
-
+        //Changement de couleurs des images en fonction de la réponse du réseau
+        //Machine1
         if (libre.equals(etatmach1)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach1);
             machine.setImageResource(R.drawable.machineverte);
@@ -181,7 +177,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
             machine.setImageResource(R.drawable.machinepanne);
         }
 
-
+        //Machine2
         if (libre.equals(etatmach2)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach2);
             machine.setImageResource(R.drawable.machineverte);
@@ -195,7 +191,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
             machine.setImageResource(R.drawable.machinepanne);
         }
 
-
+        //Machine3
         if (libre.equals(etatmach3)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach3);
             machine.setImageResource(R.drawable.machineverte);
@@ -209,7 +205,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
             machine.setImageResource(R.drawable.machinepanne);
         }
 
-
+        //Machine4
         if (libre.equals(etatmach4)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach4);
             machine.setImageResource(R.drawable.machineverte);
@@ -223,7 +219,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
             machine.setImageResource(R.drawable.machinepanne);
         }
 
-
+        //Machine5
         if (libre.equals(etatmach5)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach5);
             machine.setImageResource(R.drawable.machineverte);
@@ -237,7 +233,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
             machine.setImageResource(R.drawable.machinepanne);
         }
 
-
+        //Machine6
         if (libre.equals(etatmach6)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach6);
             machine.setImageResource(R.drawable.machineverte);
@@ -251,7 +247,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
             machine.setImageResource(R.drawable.machinepanne);
         }
 
-
+        //Machine7
         if (libre.equals(etatmach7)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach7);
             machine.setImageResource(R.drawable.machineverte);
@@ -265,7 +261,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
             machine.setImageResource(R.drawable.machinepanne);
         }
 
-
+        //Machine8
         if (libre.equals(etatmach8)) {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach8);
             machine.setImageResource(R.drawable.machineverte);

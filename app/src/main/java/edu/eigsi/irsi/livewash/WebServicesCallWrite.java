@@ -44,7 +44,11 @@ public class WebServicesCallWrite implements  Response.Listener<String>,
   private String url;
   private RequestQueue queue;
 
-
+  /**
+   * Instancifie la file de message
+   * @param activity l'activité active
+   * @param url l'url du fichier d'écriture
+   */
   public WebServicesCallWrite(Machine activity, String url) {
     super();
     this.activity = activity;
@@ -54,8 +58,10 @@ public class WebServicesCallWrite implements  Response.Listener<String>,
 
   }
 
-
-
+  /**
+   * Lance l'écriture du fichier du réseau
+   * @param filename le fichier utilisé
+   */
   public void write(final String filename, final String data) {
     StringRequest myReqWrite = new StringRequest(
         Request.Method.POST, url, this, null) {
@@ -72,13 +78,20 @@ public class WebServicesCallWrite implements  Response.Listener<String>,
     queue.add(myReqWrite);
   }
 
-
+  /**
+   * Gère la réponse du réseau
+   * @param reponse les données stockées sur le réseau
+   */
   @Override
   public void onResponse(String reponse) {
     Log.d("debug", reponse);
     activity.populateWrite(reponse);
   }
 
+  /**
+   * Gère les eventuelles erreurs
+   * @param volleyError erreur de la bibliothèque détectée
+   */
   @Override
   public void onErrorResponse(
       VolleyError volleyError) {

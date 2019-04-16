@@ -13,14 +13,10 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonLaverie;
     private Button buttonContact;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         this.buttonLaverie = (Button) findViewById(R.id.buttonLaverie);
         this.buttonContact =(Button) findViewById(R.id.buttonContact);

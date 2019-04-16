@@ -8,7 +8,8 @@
     <string name="button_envoyer">Envoyer</string>
     <string name="button_signaler">Signaler un probl"è"me</string>
     <string name="button_lancer_machine">Lancer un cycle (1h30)</string>
-
+    <string name="machine">Machine</string>
+    <string name="machinevide">Machine vide</string>
 
     <string name="message_quel_pb">Quel probl"è"me voulez-vous signaler ?</string>
     <string name="pb_bruit">La machine fait un bruit anormal</string>

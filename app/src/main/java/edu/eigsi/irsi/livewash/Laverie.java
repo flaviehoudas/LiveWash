@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 
+
 public class Laverie extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttonRetour;
@@ -41,7 +42,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
     String etatmach7;
     String etatmach8;
 
-    String heureIni1;
 
 
 

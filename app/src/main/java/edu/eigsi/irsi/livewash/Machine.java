@@ -48,6 +48,7 @@ public class Machine extends AppCompatActivity {
     String timeFinal = sdfFinal.format(dateFinal);
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,9 @@ public class Machine extends AppCompatActivity {
         this.progress.setTitle("Veuillez patientez");
         this.progress.setMessage("Récupération du résultat en cours...");
         this.progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
+
+
 
 
         //-----Enregistrer les états des boutons en utilisant SharedPrefereces---------
@@ -441,6 +445,8 @@ public class Machine extends AppCompatActivity {
         // Machine2
         if(numeroMach.equals("2")){
             if(click2) {
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
@@ -456,6 +462,8 @@ public class Machine extends AppCompatActivity {
         // Machine3
         if(numeroMach.equals("3")){
             if(click3) {
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
@@ -471,6 +479,8 @@ public class Machine extends AppCompatActivity {
         // Machine4
         if(numeroMach.equals("4")){
             if(click4) {
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
@@ -486,6 +496,8 @@ public class Machine extends AppCompatActivity {
         // Machine5
         if(numeroMach.equals("5")){
             if(click5) {
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
@@ -501,6 +513,8 @@ public class Machine extends AppCompatActivity {
         // Machine6
         if(numeroMach.equals("6")){
             if(click6) {
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
@@ -516,6 +530,8 @@ public class Machine extends AppCompatActivity {
         // Machine7
         if(numeroMach.equals("7")){
             if(click7) {
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
@@ -531,6 +547,8 @@ public class Machine extends AppCompatActivity {
         // Machine8
         if(numeroMach.equals("8")){
             if(click8) {
+                heureDebut.setText("Début du cycle: " + timeIni);
+                heureFin.setText("Fin du cycle: " + timeFinal);
                 buttonLancer.setVisibility(View.GONE);
                 heureFin.setVisibility(View.VISIBLE);
                 heureDebut.setVisibility(View.VISIBLE);
@@ -562,6 +580,7 @@ public class Machine extends AppCompatActivity {
         });
         myPopUp.show();
     }
+
 
 
 }

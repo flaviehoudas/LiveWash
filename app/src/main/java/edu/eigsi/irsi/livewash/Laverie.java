@@ -41,6 +41,9 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
     String etatmach7;
     String etatmach8;
 
+    String heureIni1;
+
+
 
 
     @Override
@@ -161,7 +164,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
                 }
                 break;
             case R.id.buttonMach6:
-                if(etatmach2.equals(panne)){
+                if(etatmach6.equals(panne)){
                     popUp();
                 }
                 else {
@@ -173,7 +176,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
                 }
                 break;
             case R.id.buttonMach7:
-                if(etatmach2.equals(panne)){
+                if(etatmach7.equals(panne)){
                     popUp();
                 }
                 else {
@@ -185,7 +188,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
                 }
                 break;
             case R.id.buttonMach8:
-                if(etatmach2.equals(panne)){
+                if(etatmach8.equals(panne)){
                     popUp();
                 }
                 else {
@@ -247,7 +250,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach2))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach2);
             machine.setImageResource(R.drawable.machinepanne);
-            machine.setClickable(false);
         }
 
         //Machine3
@@ -262,7 +264,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach3))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach3);
             machine.setImageResource(R.drawable.machinepanne);
-            machine.setClickable(false);
         }
 
         //Machine4
@@ -277,7 +278,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach4))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach4);
             machine.setImageResource(R.drawable.machinepanne);
-            machine.setClickable(false);
         }
 
         //Machine5
@@ -292,7 +292,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach5))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach5);
             machine.setImageResource(R.drawable.machinepanne);
-            machine.setClickable(false);
         }
 
         //Machine6
@@ -307,7 +306,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach6))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach6);
             machine.setImageResource(R.drawable.machinepanne);
-            machine.setClickable(false);
         }
 
         //Machine7
@@ -322,7 +320,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach7))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach7);
             machine.setImageResource(R.drawable.machinepanne);
-            machine.setClickable(false);
         }
 
         //Machine8
@@ -337,7 +334,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach8))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach8);
             machine.setImageResource(R.drawable.machinepanne);
-            machine.setClickable(false);
         }
 
 
@@ -361,5 +357,6 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         });
         myPopUp.show();
     }
+
 
 }

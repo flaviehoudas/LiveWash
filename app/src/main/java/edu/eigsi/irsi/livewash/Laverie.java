@@ -2,7 +2,13 @@ package edu.eigsi.irsi.livewash;
 
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +32,15 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
     private String libre;
     private String occupe;
     private String panne;
+    String etatmach1;
+    String etatmach2;
+    String etatmach3;
+    String etatmach4;
+    String etatmach5;
+    String etatmach6;
+    String etatmach7;
+    String etatmach8;
+
 
 
     @Override
@@ -70,6 +85,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         WebServicesCallReadLaverie wscr = new WebServicesCallReadLaverie(this, url);
         wscr.read("local");
 
+
     }
 
 
@@ -83,60 +99,102 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case R.id.buttonMach1:
-                numMachine = "1";
-                Intent ouvrirMachine1 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine1.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine1);
-                finish();
+                if(etatmach1.equals(panne)){
+                    popUp();
+                }
+                else{
+                    numMachine = "1";
+                    Intent ouvrirMachine1 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine1.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine1);
+                    finish();
+                }
                 break;
+
             case R.id.buttonMach2:
-                numMachine = "2";
-                Intent ouvrirMachine2 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine2.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine2);
-                finish();
+                if(etatmach2.equals(panne)){
+                    popUp();
+                }
+                else {
+                    numMachine = "2";
+                    Intent ouvrirMachine2 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine2.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine2);
+                    finish();
+                }
                 break;
             case R.id.buttonMach3:
-                numMachine = "3";
-                Intent ouvrirMachine3 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine3.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine3);
-                finish();
+                if(etatmach3.equals(panne)){
+                    popUp();
+                }
+                else {
+                    numMachine = "3";
+                    Intent ouvrirMachine3 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine3.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine3);
+                    finish();
+                }
                 break;
+
             case R.id.buttonMach4:
-                numMachine = "4";
-                Intent ouvrirMachine4 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine4.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine4);
-                finish();
+                if(etatmach4.equals(panne)){
+                    popUp();
+                }
+                else {
+                    numMachine = "4";
+                    Intent ouvrirMachine4 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine4.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine4);
+                    finish();
+                }
                 break;
             case R.id.buttonMach5:
-                numMachine = "5";
-                Intent ouvrirMachine5 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine5.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine5);
-                finish();
+                if(etatmach5.equals(panne)){
+                    popUp();
+                }
+                else {
+                    numMachine = "5";
+                    Intent ouvrirMachine5 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine5.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine5);
+                    finish();
+                }
                 break;
             case R.id.buttonMach6:
-                numMachine = "6";
-                Intent ouvrirMachine6 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine6.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine6);
-                finish();
+                if(etatmach2.equals(panne)){
+                    popUp();
+                }
+                else {
+                    numMachine = "6";
+                    Intent ouvrirMachine6 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine6.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine6);
+                    finish();
+                }
                 break;
             case R.id.buttonMach7:
-                numMachine = "7";
-                Intent ouvrirMachine7 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine7.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine7);
-                finish();
+                if(etatmach2.equals(panne)){
+                    popUp();
+                }
+                else {
+                    numMachine = "7";
+                    Intent ouvrirMachine7 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine7.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine7);
+                    finish();
+                }
                 break;
             case R.id.buttonMach8:
-                numMachine = "8";
-                Intent ouvrirMachine8 = new Intent(getApplicationContext(), Machine.class);
-                ouvrirMachine8.putExtra("numMach", numMachine);
-                startActivity(ouvrirMachine8);
-                finish();
+                if(etatmach2.equals(panne)){
+                    popUp();
+                }
+                else {
+                    numMachine = "8";
+                    Intent ouvrirMachine8 = new Intent(getApplicationContext(), Machine.class);
+                    ouvrirMachine8.putExtra("numMach", numMachine);
+                    startActivity(ouvrirMachine8);
+                    finish();
+                }
                 break;
         }
     }
@@ -152,14 +210,14 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
 
         //Récupération des données du réseau
         String[] etatmach = reponse.split(",");
-        String etatmach1 = etatmach[0];
-        String etatmach2 = etatmach[1];
-        String etatmach3 = etatmach[2];
-        String etatmach4 = etatmach[3];
-        String etatmach5 = etatmach[4];
-        String etatmach6 = etatmach[5];
-        String etatmach7 = etatmach[6];
-        String etatmach8 = etatmach[7];
+        this.etatmach1 = etatmach[0];
+        this.etatmach2 = etatmach[1];
+        this.etatmach3 = etatmach[2];
+        this.etatmach4 = etatmach[3];
+        this.etatmach5 = etatmach[4];
+        this.etatmach6 = etatmach[5];
+        this.etatmach7 = etatmach[6];
+        this.etatmach8 = etatmach[7];
 
 
         //Changement de couleurs des images en fonction de la réponse du réseau
@@ -189,6 +247,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach2))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach2);
             machine.setImageResource(R.drawable.machinepanne);
+            machine.setClickable(false);
         }
 
         //Machine3
@@ -203,6 +262,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach3))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach3);
             machine.setImageResource(R.drawable.machinepanne);
+            machine.setClickable(false);
         }
 
         //Machine4
@@ -217,6 +277,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach4))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach4);
             machine.setImageResource(R.drawable.machinepanne);
+            machine.setClickable(false);
         }
 
         //Machine5
@@ -231,6 +292,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach5))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach5);
             machine.setImageResource(R.drawable.machinepanne);
+            machine.setClickable(false);
         }
 
         //Machine6
@@ -245,6 +307,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach6))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach6);
             machine.setImageResource(R.drawable.machinepanne);
+            machine.setClickable(false);
         }
 
         //Machine7
@@ -259,6 +322,7 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach7))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach7);
             machine.setImageResource(R.drawable.machinepanne);
+            machine.setClickable(false);
         }
 
         //Machine8
@@ -273,13 +337,29 @@ public class Laverie extends AppCompatActivity implements View.OnClickListener {
         if (panne.equals(etatmach8))  {
             ImageView machine = (ImageView) findViewById(R.id.buttonMach8);
             machine.setImageResource(R.drawable.machinepanne);
+            machine.setClickable(false);
         }
 
 
     }
 
-
-
-
+    /**
+     * Affiche le message d'erreur
+     */
+    public void popUp(){
+        AlertDialog.Builder myPopUp = new AlertDialog.Builder(this);
+        myPopUp.setMessage("Cette machine est actuellement hors service. Notre équipe se mobilise " +
+                "afin de la réparer dans les plus brefs délais. Merci de votre compréhension.");
+        myPopUp.setTitle("Machine Hors Service");
+        myPopUp.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent retourlav = new Intent(getApplicationContext(), Laverie.class);
+                startActivity(retourlav);
+                finish();
+            }
+        });
+        myPopUp.show();
+    }
 
 }

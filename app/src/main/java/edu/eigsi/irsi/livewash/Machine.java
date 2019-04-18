@@ -2,13 +2,16 @@ package edu.eigsi.irsi.livewash;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -94,6 +97,7 @@ public class Machine extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 swapMachine();
+
                 //----Mets à jour le bouton cliqué dans SharedPreferences
                 //Machine1
                 if(numeroMach.equals("1")) {
@@ -231,6 +235,7 @@ public class Machine extends AppCompatActivity {
                         edit.apply();
                         buttonSwapping();
                     }
+
                 }
             }
         });
@@ -287,17 +292,24 @@ public class Machine extends AppCompatActivity {
         //-----Déclare la machine choisie comme étant occupée
         if (!buttonVider.isChecked()){
             //Machine1
-            if (numeroMach.equals("1")) {
-                wscw.write("local", "O," + etatmach2 + "," + etatmach3 + "," +
-                        etatmach4 + "," + etatmach5 + "," + etatmach6 + "," + etatmach7
-                        + "," + etatmach8);
+            if(numeroMach.equals("1")){
+                if (etatmach1.equals("L")) {
+                    wscw.write("local", "O," + etatmach2 + "," + etatmach3 + "," +
+                            etatmach4 + "," + etatmach5 + "," + etatmach6 + "," + etatmach7
+                            + "," + etatmach8);
+                }
+                else{
+                    popUp();
+                }
             }
+
             //Machine2
-            if (numeroMach.equals("2")) {
+            if(numeroMach.equals("2")){
                 wscw.write("local", etatmach1 + ",O" + "," + etatmach3 + ","
                         + etatmach4 + "," + etatmach5 + "," + etatmach6 + "," + etatmach7 + "," +
                         etatmach8);
             }
+
             //Machine3
             if (numeroMach.equals("3")) {
                 wscw.write("local", etatmach1 + "," + etatmach2 + ",O," + etatmach4
@@ -531,6 +543,24 @@ public class Machine extends AppCompatActivity {
                 buttonVider.setVisibility(View.GONE);
             }
         }
+    }
+
+    /**
+     * Affiche le message d'erreur
+     */
+    public void popUp(){
+        AlertDialog.Builder myPopUp = new AlertDialog.Builder(this);
+        myPopUp.setMessage("Cette machine est en cours d'utilisation. Veuillez en choisir une autre");
+        myPopUp.setTitle("En cours d'utilisation");
+        myPopUp.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent retourlav = new Intent(getApplicationContext(), Laverie.class);
+                startActivity(retourlav);
+                finish();
+            }
+        });
+        myPopUp.show();
     }
 
 
